@@ -19,7 +19,8 @@ class Handler(AbstractHandler):
                     if isinstance(value, dict) and isinstance(merged_tree[key], dict):
                         merged_tree[key] = cls.merge_trees([merged_tree[key], value])
                     else:
-                        merged_tree[key] = [merged_tree[key], value]
+                        merged_tree[key] = [merged_tree[key], value] if not isinstance(merged_tree[key], list) else \
+                            merged_tree[key] + [value]
                 else:
                     merged_tree[key] = value
         return merged_tree
