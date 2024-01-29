@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 
 
-class AbstractDateNormalizer(ABC):
+class AbstractService(ABC):
     @classmethod
     @abstractmethod
-    async def normalize(cls, tree: dict) -> None:
+    def parse(cls, tree: str | dict) -> dict:
         pass

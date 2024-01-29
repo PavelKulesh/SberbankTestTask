@@ -1,18 +1,18 @@
 import xml.etree.ElementTree as ET
 
-from src.abstracts.service import AbstractService
-from src.normalizers.date_normalizer import DateNormalizer
+from src.abstract.service import AbstractService
+from src.formatters.date_formatter import DateFormatter
 
 
 class XMLService(AbstractService):
     @classmethod
-    async def parse(cls, tree: str) -> dict:
-        tree_dict = await cls.__convert_xml_to_dict(tree)
-        await DateNormalizer.normalize(tree_dict)
+    def parse(cls, tree: str) -> dict:
+        tree_dict = cls.__convert_xml_to_dict(tree)
+        DateFormatter.normalize(tree_dict)
         return tree_dict
 
     @classmethod
-    async def __convert_xml_to_dict(cls, xml_data: str) -> dict:
+    def __convert_xml_to_dict(cls, xml_data: str) -> dict:
         root = ET.fromstring(xml_data)
         result_dict = {}
         for element in root:
