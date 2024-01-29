@@ -7,6 +7,9 @@ from src.common.exceptions import UnsupportedContentType
 
 
 class ContentTypeMiddleware(BaseHTTPMiddleware):
+    """
+    Middleware для определения типа контента
+    """
     service_mapping = {
         "application/json": JSONService(),
         "application/xml": XMLService()

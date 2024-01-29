@@ -8,6 +8,9 @@ from src.common.exceptions import InvalidDateException
 class DateFormatter(AbstractDateFormatter):
     @classmethod
     def normalize(cls, tree: dict) -> None:
+        """
+        Нормализация дат и сроков в дереве
+        """
         for key, value in tree.items():
             if isinstance(value, dict):
                 cls.normalize(value)
@@ -18,6 +21,9 @@ class DateFormatter(AbstractDateFormatter):
 
     @classmethod
     def __convert_string_to_date(cls, date_string: str) -> str:
+        """
+        Метод, конвертирующий даты из разных форматов в формат 'dd.mm.yyyy'
+        """
         date = parse(date_string, languages=["ru"])
         if date is None:
             raise InvalidDateException("Invalid Date Format")
@@ -26,6 +32,11 @@ class DateFormatter(AbstractDateFormatter):
 
     @classmethod
     def __calculate_remained_term(cls, deadline: str) -> str:
+        """
+        Метод считает, сколько лет, месяцев, недель и дней остаётся до истечения срока
+        оплаты и представляет эту информацию в виде строки в формате
+        'год_месяц_неделя_день'
+        """
         left = 0
         term_dict = {
             "years": 0,
@@ -97,6 +108,9 @@ class DateFormatter(AbstractDateFormatter):
 
     @classmethod
     def __get_number(cls, possible_number: str, word_range: list[str]) -> int:
+        """
+        Метод получает часть строки и конвертирует её в целое число
+        """
         try:
             number = int(possible_number)
         except ValueError:
