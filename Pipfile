@@ -9,6 +9,7 @@ uvicorn = {extras = ["standart"], version = "*"}
 flake8 = "*"
 dateparser = "*"
 ru-word2number = "*"
+pytest = "*"
 
 [dev-packages]
 
