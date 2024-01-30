@@ -3,7 +3,7 @@ from fastapi import APIRouter, Request, Body, HTTPException
 router_v1 = APIRouter(prefix="/v1")
 
 
-@router_v1.post("/process_tree")
+@router_v1.post("/files")
 def process_tree(request: Request, tree: dict | str = Body(...)):
     try:
         service = request.state.service
