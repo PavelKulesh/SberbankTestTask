@@ -9,7 +9,7 @@ class DateFormatter(AbstractDateFormatter):
     @classmethod
     def normalize(cls, tree: dict) -> None:
         """
-        Нормализация дат и сроков в дереве
+        Normalization of dates and deadlines in the tree
         """
         for key, value in tree.items():
             if isinstance(value, dict):
@@ -22,7 +22,7 @@ class DateFormatter(AbstractDateFormatter):
     @classmethod
     def __convert_string_to_date(cls, date_string: str) -> str:
         """
-        Метод, конвертирующий даты из разных форматов в формат 'dd.mm.yyyy'
+        Method converting dates from various formats to 'dd.mm.yyyy' format
         """
         date = parse(date_string, languages=["ru"])
         if date is None:
@@ -33,9 +33,9 @@ class DateFormatter(AbstractDateFormatter):
     @classmethod
     def __calculate_remained_term(cls, deadline: str) -> str:
         """
-        Метод считает, сколько лет, месяцев, недель и дней остаётся до истечения срока
-        оплаты и представляет эту информацию в виде строки в формате
-        'год_месяц_неделя_день'
+        The method calculates the remaining years, months, weeks,
+        and days until the payment deadline and presents this
+        information as a string in the format 'year_month_week_day'
         """
         left = 0
         term_dict = {
@@ -92,6 +92,9 @@ class DateFormatter(AbstractDateFormatter):
 
     @classmethod
     def __convert_word_to_number(cls, split_deadline: list[str]) -> int | None:
+        """
+        Convert a word representing a number to an integer.
+        """
         start = 0
         was_the_number = False
         for index, word in enumerate(split_deadline):
@@ -109,7 +112,7 @@ class DateFormatter(AbstractDateFormatter):
     @classmethod
     def __get_number(cls, possible_number: str, word_range: list[str]) -> int:
         """
-        Метод получает часть строки и конвертирует её в целое число
+        The method takes a substring and converts it into an integer
         """
         try:
             number = int(possible_number)

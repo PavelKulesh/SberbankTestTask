@@ -14,7 +14,7 @@ pipenv install
 
 ### Запуск приложения
 ```
-uvicorn src.main:app --reload --host 0.0.0.0 --port 80
+python src/main.py
 ```
 
 ### Endpoints

@@ -5,12 +5,10 @@ class Handler(AbstractHandler):
     @classmethod
     def merge_trees(cls, trees: list[dict]) -> dict:
         """
-        Метод, который принимает список словарей и объединяет их в результирующий словарь (дерево).
-        Если значение является словарем и ключ уже существует в результирующем словаре,
-        то происходит рекурсивное обновление этого словаря.
-
-        :param trees: список деревьев
-        :return: объединенный словарь (дерево)
+        Method that takes a list of dictionaries and merges
+        them into the resulting dictionary (tree).
+        If a value is a dictionary and the key already exists
+        in the resulting dictionary, recursive updating of this dictionary occurs.
         """
         merged_tree = {}
         for tree in trees:
@@ -28,7 +26,7 @@ class Handler(AbstractHandler):
     @staticmethod
     def split_tree(tree: dict) -> list[dict]:
         """
-        Метод принимает словарь, содержащий несколько деревьев,
-        разделяет их и возвращает список этих деревьев.
+        The method takes a dictionary containing multiple trees,
+        separates them, and returns a list of these trees.
         """
         return [sub_tree for sub_tree in tree.values()]

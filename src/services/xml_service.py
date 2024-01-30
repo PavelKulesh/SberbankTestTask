@@ -6,7 +6,7 @@ from src.formatters.date_formatter import DateFormatter
 
 class XMLService(AbstractService):
     """
-    Сервис для конвертации xml в словарь с последующей нормализацией словаря
+    Service for converting XML to a dictionary with subsequent normalization of the dictionary.
     """
 
     @classmethod
@@ -18,7 +18,7 @@ class XMLService(AbstractService):
     @classmethod
     def __convert_xml_to_dict(cls, xml_data: str) -> dict:
         """
-        Метод, который конвертирует XML в словарь
+        Method that converts XML to a dictionary
         """
         root = ET.fromstring(xml_data)
         result_dict = {}
