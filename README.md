@@ -28,9 +28,9 @@ pytest
 
 ### Endpoints
 
-| Method | Url                                       | Description  | Headers                        |
-|:-------|:------------------------------------------|:-------------|:-------------------------------|
-| POST   | http://127.0.0.1:8000/api/v1/process_tree | Process json | Content-Type: application/json |
-| POST   | http://127.0.0.1:8000/api/v1/process_tree | Process xml  | Content-Type: application/xml  |
+| Method | Url                                    | Description  | Headers                        |
+|:-------|:---------------------------------------|:-------------|:-------------------------------|
+| POST   | http://127.0.0.1:8000/api/v1/documents | Process json | Content-Type: application/json |
+| POST   | http://127.0.0.1:8000/api/v1/documents | Process xml  | Content-Type: application/xml  |
 
 ### Тестовые xml и json файлы находятся в директории `examples/`
