@@ -1,5 +1,17 @@
 import uvicorn
 from src.settings import settings
 
-if __name__ == '__main__':
-    uvicorn.run('src.main:app', reload=True, port=settings.port, host=settings.host)
+
+def main() -> None:
+    """Entrypoint of the application."""
+    uvicorn.run(
+        "src.main:get_app",
+        host=settings.host,
+        port=settings.port,
+        reload=True,
+        factory=True,
+    )
+
+
+if __name__ == "__main__":
+    main()
