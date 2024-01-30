@@ -5,9 +5,9 @@ class AbstractHandler(ABC):
     @classmethod
     @abstractmethod
     def merge_trees(cls, trees: list[dict]) -> dict:
-        pass
+        raise NotImplementedError
 
     @staticmethod
     @abstractmethod
     def split_tree(tree: dict) -> list[dict]:
-        pass
+        raise NotImplementedError

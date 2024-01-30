@@ -5,4 +5,4 @@ class AbstractDateFormatter(ABC):
     @classmethod
     @abstractmethod
     def normalize(cls, tree: dict) -> None:
-        pass
+        raise NotImplementedError

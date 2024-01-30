@@ -10,6 +10,7 @@ flake8 = "*"
 dateparser = "*"
 ru-word2number = "*"
 pytest = "*"
+pydantic-settings = "*"
 
 [dev-packages]
 
