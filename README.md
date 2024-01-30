@@ -20,6 +20,12 @@ pipenv install
 python run.py
 ```
 
+### Запуск тестов
+
+```
+pytest
+```
+
 ### Endpoints
 
 | Method | Url                                       | Description  | Headers                        |
