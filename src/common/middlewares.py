@@ -22,7 +22,5 @@ class ContentTypeMiddleware(BaseHTTPMiddleware):
             if request.state.service is None:
                 raise UnsupportedContentType()
 
-            response = await call_next(request)
-            return response
-
-        raise UnsupportedContentType()
+        response = await call_next(request)
+        return response
