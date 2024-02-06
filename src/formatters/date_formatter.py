@@ -86,8 +86,10 @@ class DateFormatter(AbstractDateFormatter):
             ):
                 number = cls.__get_number(possible_number=possible_number,
                                           word_range=split_deadline[left:index + 1])
-                term_dict["days"] += number
-                left = index
+                if number:
+                    term_dict["days"] += number
+                    left = index
+
         return "_".join(map(str, term_dict.values()))
 
     @classmethod
