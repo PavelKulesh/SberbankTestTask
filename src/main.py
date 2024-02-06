@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-from fastapi.responses import JSONResponse
 
 from src.api.router import api_router
 from src.common.middlewares import ContentTypeMiddleware
